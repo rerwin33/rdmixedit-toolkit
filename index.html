@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDMixedIt EQ Cheat Sheet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <header class="hero">
+    <h1><span>RD</span> EQ Cheat Sheet</h1>
+    <p>Interactive quick reference for recording, mixing & production.</p>
+    <p class="handle">@RDMixedIt</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Frequency Spectrum Map</h2>
+
+      <div class="spectrum">
+        <button data-range="sub">Sub Bass<br><small>20-60Hz</small></button>
+        <button data-range="bass">Bass<br><small>60-250Hz</small></button>
+        <button data-range="lowmids">Low Mids<br><small>250-500Hz</small></button>
+        <button data-range="mids">Mid Range<br><small>500Hz-2kHz</small></button>
+        <button data-range="uppermids">Upper Mids<br><small>2kHz-5kHz</small></button>
+        <button data-range="highs">Highs<br><small>5kHz-20kHz</small></button>
+      </div>
+
+      <div id="rangeInfo" class="info-box">
+        <h3>Tap a frequency range</h3>
+        <p>Select a section above to learn what it controls.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Instrument Quick Reference</h2>
+
+      <div class="button-grid">
+        <button data-instrument="vocals">Vocals</button>
+        <button data-instrument="rapVocals">Rap Vocals</button>
+        <button data-instrument="kick">Kick</button>
+        <button data-instrument="snare">Snare</button>
+        <button data-instrument="hihats">Hi-Hats</button>
+        <button data-instrument="bass808">808 / Bass</button>
+        <button data-instrument="keys">Keys / Piano</button>
+        <button data-instrument="guitar">Guitar</button>
+      </div>
+
+      <div id="instrumentInfo" class="info-box">
+        <h3>Choose an instrument</h3>
+        <p>Get common EQ ranges and what to listen for.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>My Mix Sounds...</h2>
+
+      <div class="button-grid problem-grid">
+        <button data-problem="muddy">Muddy</button>
+        <button data-problem="boxy">Boxy</button>
+        <button data-problem="harsh">Harsh</button>
+        <button data-problem="boomy">Boomy</button>
+        <button data-problem="thin">Thin</button>
+        <button data-problem="dull">Dull</button>
+      </div>
+
+      <div id="problemInfo" class="info-box">
+        <h3>Problem Finder</h3>
+        <p>Select what you hear and RD will point you to the likely frequency area.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Want the full RDMixedIt Toolkit?</h2>
+      <p>EQ charts, vocal chain guides, compression cheat sheets, mix prep checklists, and more coming soon.</p>
+      <button>Download Free PDF</button>
+      <button>Book a Mix</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Good mixes start with good decisions. Train your ears. Trust your ears. Mix with purpose.</p>
+    <p>@RDMixedIt</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
