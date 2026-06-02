@@ -1,1 +1,162 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px 25px;
+  background: linear-gradient(135deg, #000, #1a1a1a);
+  border-bottom: 2px solid #e60000;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.hero h1 span {
+  color: #e60000;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  color: #ddd;
+}
+
+.handle {
+  color: #ffd700 !important;
+  font-weight: bold;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 30px auto;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.04);
+}
+
+.card h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: #ffd700;
+}
+
+.spectrum {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.spectrum button {
+  color: white;
+  border: none;
+  padding: 22px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.spectrum small {
+  font-weight: normal;
+}
+
+.spectrum button:nth-child(1) { background: #5b248c; }
+.spectrum button:nth-child(2) { background: #005b96; }
+.spectrum button:nth-child(3) { background: #2f7d32; }
+.spectrum button:nth-child(4) { background: #d89200; }
+.spectrum button:nth-child(5) { background: #e64a19; }
+.spectrum button:nth-child(6) { background: #c2185b; }
+
+button:hover {
+  filter: brightness(1.18);
+  transform: translateY(-1px);
+}
+
+.info-box {
+  background: #050505;
+  border: 1px solid #444;
+  border-left: 5px solid #e60000;
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 120px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.info-box ul {
+  padding-left: 20px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.button-grid button,
+.cta button {
+  background: #1c1c1c;
+  color: white;
+  border: 1px solid #555;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.problem-grid button {
+  border-color: #e60000;
+}
+
+.cta {
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #1a1a1a, #000);
+  border: 1px solid #e60000;
+  border-radius: 16px;
+}
+
+.cta h2 {
+  color: #ffd700;
+}
+
+.cta button {
+  margin: 8px;
+  background: #e60000;
+  border: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aaa;
+  border-top: 1px solid #222;
+}
+
+@media (max-width: 768px) {
+  .spectrum {
+    grid-template-columns: 1fr 1fr;
+  }
+}
