@@ -212,17 +212,18 @@ footer {
 
 .spectrum-highlight {
   position: absolute;
-
   top: 0;
   left: 0;
-
   width: 0%;
-
   height: 100%;
 
-  background: rgba(255,255,255,.25);
+  background: rgba(255, 255, 255, 0.35);
 
-  transition: all .3s ease;
+  box-shadow:
+    0 0 15px rgba(255, 255, 255, 0.45),
+    inset 0 0 12px rgba(255, 255, 255, 0.35);
+
+  transition: all 0.35s ease;
 }
 
 .spectrum-labels {
