@@ -147,6 +147,8 @@ document.querySelectorAll("[data-range]").forEach(button => {
   button.addEventListener("click", () => {
     const data = rangeData[button.dataset.range];
 
+    highlightSpectrum(button.dataset.range);
+
     document.getElementById("rangeInfo").innerHTML = `
       <h3>${data.title}</h3>
       <p>${data.text}</p>
@@ -177,3 +179,21 @@ document.querySelectorAll("[data-problem]").forEach(button => {
     `;
   });
 });
+
+function highlightSpectrum(range) {
+  const highlight = document.getElementById("spectrumHighlight");
+
+  const positions = {
+    sub: { left: "0%", width: "12%" },
+    bass: { left: "12%", width: "20%" },
+    lowmids: { left: "32%", width: "18%" },
+    mids: { left: "50%", width: "20%" },
+    uppermids: { left: "70%", width: "15%" },
+    highs: { left: "85%", width: "15%" }
+  };
+
+  if (!positions[range]) return;
+
+  highlight.style.left = positions[range].left;
+  highlight.style.width = positions[range].width;
+}
