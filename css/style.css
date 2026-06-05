@@ -11,7 +11,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
   background: linear-gradient(180deg, #050505 0%, #111111 100%);
   border-bottom: 2px solid #ffd700;
 }
@@ -30,7 +30,7 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
   line-height: 1;
   margin: 0;
   text-transform: uppercase;
@@ -44,13 +44,14 @@ body {
   font-size: 1.2rem;
   color: #ccc;
   max-width: 600px;
-  margin: 25px auto;
+  margin: 15px auto;
 }
 
 .handle {
   color: #ffd700;
   font-weight: bold;
   letter-spacing: 1px;
+  margin-top: 10px;
 }
 
 .container {
