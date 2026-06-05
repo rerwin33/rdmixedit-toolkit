@@ -161,6 +161,8 @@ document.querySelectorAll("[data-instrument]").forEach(button => {
   button.addEventListener("click", () => {
     const data = instrumentData[button.dataset.instrument];
 
+    highlightInstrument(button.dataset.instrument);
+
     document.getElementById("instrumentInfo").innerHTML = `
       <h3>${data.title}</h3>
       ${createList(data.tips)}
@@ -196,4 +198,30 @@ function highlightSpectrum(range) {
 
   highlight.style.left = positions[range].left;
   highlight.style.width = positions[range].width;
+}
+
+function highlightInstrument(instrument) {
+  const highlight = document.getElementById("spectrumHighlight");
+
+  const positions = {
+    vocals: { left: "20%", width: "45%" },
+    rapVocals: { left: "18%", width: "50%" },
+
+    kick: { left: "5%", width: "20%" },
+
+    snare: { left: "15%", width: "25%" },
+
+    hihats: { left: "75%", width: "20%" },
+
+    bass808: { left: "0%", width: "25%" },
+
+    keys: { left: "15%", width: "45%" },
+
+    guitar: { left: "20%", width: "40%" }
+  };
+
+  if (!positions[instrument]) return;
+
+  highlight.style.left = positions[instrument].left;
+  highlight.style.width = positions[instrument].width;
 }
