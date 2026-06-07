@@ -225,3 +225,21 @@ function highlightInstrument(instrument) {
   highlight.style.left = positions[instrument].left;
   highlight.style.width = positions[instrument].width;
 }
+
+
+document.querySelectorAll(".tab-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const selectedTab = button.dataset.tab;
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    document.querySelectorAll(".tab-panel").forEach(panel => {
+      panel.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    document.getElementById(selectedTab).classList.add("active");
+  });
+});
