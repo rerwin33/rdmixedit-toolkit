@@ -239,3 +239,40 @@ footer {
   color: #aaa;
 }
 
+
+.tool-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 25px 0 20px;
+}
+
+.tab-btn {
+  background: #151515;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 14px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #ffd700;
+  color: #080808;
+  border-color: #ffd700;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .tool-tabs {
+    grid-template-columns: 1fr;
+  }
+}
