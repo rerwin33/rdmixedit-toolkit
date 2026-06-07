@@ -24,81 +24,70 @@
 
   <main class="container">
 
-    <section class="card">
-      <h2>Frequency Spectrum Map</h2>
 
-      <div class="visual-spectrum">
-        <div class="spectrum-bar">
-          <div class="spectrum-highlight" id="spectrumHighlight"></div>
-        </div>
+<section class="card">
+  <h2>Frequency Spectrum Map</h2>
 
-        <div class="spectrum-labels">
-          <span>20Hz</span>
-          <span>60Hz</span>
-          <span>250Hz</span>
-          <span>500Hz</span>
-          <span>2kHz</span>
-          <span>5kHz</span>
-          <span>20kHz</span>
-        </div>
-      </div>
+  <div class="visual-spectrum">
+    <div class="spectrum-bar">
+      <div class="spectrum-highlight" id="spectrumHighlight"></div>
+    </div>
 
-      <div class="tool-tabs">
-        <button class="tab-btn active" data-tab="frequencyTab">Frequency Ranges</button>
-        <button class="tab-btn" data-tab="instrumentTab">Instrument Guide</button>
-        <button class="tab-btn" data-tab="problemTab">Mix Problem Finder</button>
-      </div>
+    <div class="spectrum-labels">
+      <span>20Hz</span>
+      <span>60Hz</span>
+      <span>250Hz</span>
+      <span>500Hz</span>
+      <span>2kHz</span>
+      <span>5kHz</span>
+      <span>20kHz</span>
+    </div>
+  </div>
 
-      <div class="tab-panel active" id="frequencyTab">
-        <div class="spectrum">
-          <button data-range="sub">Sub Bass<br><small>20-60Hz</small></button>
-          <button data-range="bass">Bass<br><small>60-250Hz</small></button>
-          <button data-range="lowmids">Low Mids<br><small>250-500Hz</small></button>
-          <button data-range="mids">Mid Range<br><small>500Hz-2kHz</small></button>
-          <button data-range="uppermids">Upper Mids<br><small>2kHz-5kHz</small></button>
-          <button data-range="highs">Highs<br><small>5kHz-20kHz</small></button>
-        </div>
+  <div class="spectrum">
+    <button data-range="sub">Sub Bass<br><small>20-60Hz</small></button>
+    <button data-range="bass">Bass<br><small>60-250Hz</small></button>
+    <button data-range="lowmids">Low Mids<br><small>250-500Hz</small></button>
+    <button data-range="mids">Mid Range<br><small>500Hz-2kHz</small></button>
+    <button data-range="uppermids">Upper Mids<br><small>2kHz-5kHz</small></button>
+    <button data-range="highs">Highs<br><small>5kHz-20kHz</small></button>
+  </div>
 
-        <div id="rangeInfo" class="info-box">
-          <h3>Tap a frequency range</h3>
-          <p>Select a section above to learn what it controls.</p>
-        </div>
-      </div>
+  <div id="infoBox" class="info-box">
+    <h3>Tap a frequency range</h3>
+    <p>Select a section above to learn what it controls.</p>
+  </div>
 
-      <div class="tab-panel" id="instrumentTab">
-        <div class="button-grid">
-          <button data-instrument="vocals">Vocals</button>
-          <button data-instrument="rapVocals">Rap Vocals</button>
-          <button data-instrument="kick">Kick</button>
-          <button data-instrument="snare">Snare</button>
-          <button data-instrument="hihats">Hi-Hats</button>
-          <button data-instrument="bass808">808 / Bass</button>
-          <button data-instrument="keys">Keys / Piano</button>
-          <button data-instrument="guitar">Guitar</button>
-        </div>
+  <div class="tool-tabs">
+    <button class="tab-btn active" data-tab="instrumentTab">Instrument Guide</button>
+    <button class="tab-btn" data-tab="problemTab">Mix Problem Finder</button>
+  </div>
 
-        <div id="instrumentInfo" class="info-box">
-          <h3>Choose an instrument</h3>
-          <p>Get common EQ ranges and what to listen for.</p>
-        </div>
-      </div>
+  <div class="tab-panel active" id="instrumentTab">
+    <div class="button-grid">
+      <button data-instrument="vocals">Vocals</button>
+      <button data-instrument="rapVocals">Rap Vocals</button>
+      <button data-instrument="kick">Kick</button>
+      <button data-instrument="snare">Snare</button>
+      <button data-instrument="hihats">Hi-Hats</button>
+      <button data-instrument="bass808">808 / Bass</button>
+      <button data-instrument="keys">Keys / Piano</button>
+      <button data-instrument="guitar">Guitar</button>
+    </div>
+  </div>
 
-      <div class="tab-panel" id="problemTab">
-        <div class="button-grid problem-grid">
-          <button data-problem="muddy">Muddy</button>
-          <button data-problem="boxy">Boxy</button>
-          <button data-problem="harsh">Harsh</button>
-          <button data-problem="boomy">Boomy</button>
-          <button data-problem="thin">Thin</button>
-          <button data-problem="dull">Dull</button>
-        </div>
-
-        <div id="problemInfo" class="info-box">
-          <h3>Problem Finder</h3>
-          <p>Select what you hear and RD will point you to the likely frequency area.</p>
-        </div>
-      </div>
-    </section>
+  <div class="tab-panel" id="problemTab">
+    <div class="button-grid problem-grid">
+      <button data-problem="muddy">Muddy</button>
+      <button data-problem="boxy">Boxy</button>
+      <button data-problem="harsh">Harsh</button>
+      <button data-problem="boomy">Boomy</button>
+      <button data-problem="thin">Thin</button>
+      <button data-problem="dull">Dull</button>
+    </div>
+  </div>
+</section>
+    
 
     <section class="cta">
       <h2>Want the full RDMixedIt Toolkit?</h2>
