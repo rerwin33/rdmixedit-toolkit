@@ -115,32 +115,36 @@ const instrumentData = {
 const problemData = {
   muddy: {
     title: "Muddy Mix",
-    text: "Check 150-350Hz first. Try a small cut on vocals, instruments, or mix bus.",
+    text: "Check 150-350Hz first. Try a small cut on vocals, instruments, or mix bus."
   },
   boxy: {
     title: "Boxy Mix",
-    text: "Check 300-700Hz. This area can make vocals and instruments sound trapped or hollow.",
+    text: "Check 300-700Hz. This area can make vocals and instruments sound trapped or hollow."
   },
   harsh: {
     title: "Harsh Mix",
-    text: "Check 2.5-5kHz. Reduce carefully because this area also controls presence.",
+    text: "Check 2.5-5kHz. Reduce carefully because this area also controls presence."
   },
   boomy: {
     title: "Boomy Mix",
-    text: "Check 80-150Hz. Too much here can make the low end feel loose.",
+    text: "Check 80-150Hz. Too much here can make the low end feel loose."
   },
   thin: {
     title: "Thin Mix",
-    text: "Check 100-250Hz. A small boost can add warmth and body.",
+    text: "Check 100-250Hz. A small boost can add warmth and body."
   },
   dull: {
     title: "Dull Mix",
-    text: "Check 8-16kHz. A gentle shelf can add brightness and air.",
+    text: "Check 8-16kHz. A gentle shelf can add brightness and air."
   }
 };
 
 function createList(items) {
   return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
+}
+
+function updateInfoBox(html) {
+  document.getElementById("infoBox").innerHTML = html;
 }
 
 document.querySelectorAll("[data-range]").forEach(button => {
@@ -149,11 +153,11 @@ document.querySelectorAll("[data-range]").forEach(button => {
 
     highlightSpectrum(button.dataset.range);
 
-    document.getElementById("rangeInfo").innerHTML = `
+    updateInfoBox(`
       <h3>${data.title}</h3>
       <p>${data.text}</p>
       ${createList(data.tips)}
-    `;
+    `);
   });
 });
 
@@ -163,10 +167,10 @@ document.querySelectorAll("[data-instrument]").forEach(button => {
 
     highlightInstrument(button.dataset.instrument);
 
-    document.getElementById("instrumentInfo").innerHTML = `
+    updateInfoBox(`
       <h3>${data.title}</h3>
       ${createList(data.tips)}
-    `;
+    `);
   });
 });
 
@@ -174,11 +178,13 @@ document.querySelectorAll("[data-problem]").forEach(button => {
   button.addEventListener("click", () => {
     const data = problemData[button.dataset.problem];
 
-    document.getElementById("problemInfo").innerHTML = `
+    highlightProblem(button.dataset.problem);
+
+    updateInfoBox(`
       <h3>${data.title}</h3>
       <p>${data.text}</p>
       <p><strong>RD Tip:</strong> Cut first. Boost second. Always A/B your moves.</p>
-    `;
+    `);
   });
 });
 
@@ -206,17 +212,11 @@ function highlightInstrument(instrument) {
   const positions = {
     vocals: { left: "20%", width: "45%" },
     rapVocals: { left: "18%", width: "50%" },
-
     kick: { left: "5%", width: "20%" },
-
     snare: { left: "15%", width: "25%" },
-
     hihats: { left: "75%", width: "20%" },
-
     bass808: { left: "0%", width: "25%" },
-
     keys: { left: "15%", width: "45%" },
-
     guitar: { left: "20%", width: "40%" }
   };
 
@@ -226,6 +226,23 @@ function highlightInstrument(instrument) {
   highlight.style.width = positions[instrument].width;
 }
 
+function highlightProblem(problem) {
+  const highlight = document.getElementById("spectrumHighlight");
+
+  const positions = {
+    muddy: { left: "25%", width: "18%" },
+    boxy: { left: "32%", width: "22%" },
+    harsh: { left: "68%", width: "17%" },
+    boomy: { left: "10%", width: "18%" },
+    thin: { left: "15%", width: "20%" },
+    dull: { left: "82%", width: "18%" }
+  };
+
+  if (!positions[problem]) return;
+
+  highlight.style.left = positions[problem].left;
+  highlight.style.width = positions[problem].width;
+}
 
 document.querySelectorAll(".tab-btn").forEach(button => {
   button.addEventListener("click", () => {
