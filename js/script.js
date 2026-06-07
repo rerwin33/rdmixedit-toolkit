@@ -151,7 +151,7 @@ document.querySelectorAll("[data-range]").forEach(button => {
   button.addEventListener("click", () => {
     const data = rangeData[button.dataset.range];
 
-    highlightSpectrum(button.dataset.range);
+    highlightProblem(button.dataset.problem);
 
     updateInfoBox(`
       <h3>${data.title}</h3>
