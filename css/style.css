@@ -149,6 +149,11 @@ button:hover {
   cursor: pointer;
 }
 
+.problem-grid {
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  justify-content: center;
+}
+
 .problem-grid button {
   border-color: #e60000;
 }
@@ -269,7 +274,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .tool-tabs {
-    grid-template-columns: 1fr;
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spectrum {
+    grid-template-columns: 1fr 1fr;
   }
 }
