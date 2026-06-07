@@ -178,11 +178,7 @@ footer {
   border-top: 1px solid #222;
 }
 
-@media (max-width: 768px) {
-  .spectrum {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+
 /* VISUAL FREQUENCY SPECTRUM */
 
 .visual-spectrum {
@@ -241,10 +237,11 @@ footer {
 
 
 .tool-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 10px;
   margin: 25px 0 20px;
+  flex-wrap: wrap;
 }
 
 .tab-btn {
