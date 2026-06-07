@@ -63,43 +63,52 @@
       </div>
     </section>
 
-    <section class="card">
-      <h2>Instrument Quick Reference</h2>
+  <div class="tool-tabs">
+  <button class="tab-btn active" data-tab="frequencyTab">Frequency Ranges</button>
+  <button class="tab-btn" data-tab="instrumentTab">Instrument Guide</button>
+  <button class="tab-btn" data-tab="problemTab">Mix Problem Finder</button>
+</div>
 
-      <div class="button-grid">
-        <button data-instrument="vocals">Vocals</button>
-        <button data-instrument="rapVocals">Rap Vocals</button>
-        <button data-instrument="kick">Kick</button>
-        <button data-instrument="snare">Snare</button>
-        <button data-instrument="hihats">Hi-Hats</button>
-        <button data-instrument="bass808">808 / Bass</button>
-        <button data-instrument="keys">Keys / Piano</button>
-        <button data-instrument="guitar">Guitar</button>
-      </div>
+<div class="tab-panel active" id="frequencyTab">
+  <div id="rangeInfo" class="info-box">
+    <h3>Tap a frequency range</h3>
+    <p>Select a section above to learn what it controls.</p>
+  </div>
+</div>
 
-      <div id="instrumentInfo" class="info-box">
-        <h3>Choose an instrument</h3>
-        <p>Get common EQ ranges and what to listen for.</p>
-      </div>
-    </section>
+<div class="tab-panel" id="instrumentTab">
+  <div class="button-grid">
+    <button data-instrument="vocals">Vocals</button>
+    <button data-instrument="rapVocals">Rap Vocals</button>
+    <button data-instrument="kick">Kick</button>
+    <button data-instrument="snare">Snare</button>
+    <button data-instrument="hihats">Hi-Hats</button>
+    <button data-instrument="bass808">808 / Bass</button>
+    <button data-instrument="keys">Keys / Piano</button>
+    <button data-instrument="guitar">Guitar</button>
+  </div>
 
-    <section class="card">
-      <h2>My Mix Sounds...</h2>
+  <div id="instrumentInfo" class="info-box">
+    <h3>Choose an instrument</h3>
+    <p>Get common EQ ranges and what to listen for.</p>
+  </div>
+</div>
 
-      <div class="button-grid problem-grid">
-        <button data-problem="muddy">Muddy</button>
-        <button data-problem="boxy">Boxy</button>
-        <button data-problem="harsh">Harsh</button>
-        <button data-problem="boomy">Boomy</button>
-        <button data-problem="thin">Thin</button>
-        <button data-problem="dull">Dull</button>
-      </div>
+<div class="tab-panel" id="problemTab">
+  <div class="button-grid problem-grid">
+    <button data-problem="muddy">Muddy</button>
+    <button data-problem="boxy">Boxy</button>
+    <button data-problem="harsh">Harsh</button>
+    <button data-problem="boomy">Boomy</button>
+    <button data-problem="thin">Thin</button>
+    <button data-problem="dull">Dull</button>
+  </div>
 
-      <div id="problemInfo" class="info-box">
-        <h3>Problem Finder</h3>
-        <p>Select what you hear and RD will point you to the likely frequency area.</p>
-      </div>
-    </section>
+  <div id="problemInfo" class="info-box">
+    <h3>Problem Finder</h3>
+    <p>Select what you hear and RD will point you to the likely frequency area.</p>
+  </div>
+</div>
 
     <section class="cta">
       <h2>Want the full RDMixedIt Toolkit?</h2>
