@@ -36,10 +36,6 @@ body {
   text-transform: uppercase;
 }
 
-.hero h1 span {
-  color: #ffd700;
-}
-
 .hero-subtitle {
   font-size: 1.2rem;
   color: #ccc;
@@ -110,6 +106,12 @@ button:hover {
     0 0 10px rgba(255,215,0,.2),
     0 0 20px rgba(255,215,0,.1);
   transition: all .2s ease;
+}
+
+.spectrum button.active,
+.button-grid button.active {
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 15px rgba(255,215,0,.4);
 }
 
 .info-box {
