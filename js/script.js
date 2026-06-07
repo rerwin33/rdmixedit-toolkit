@@ -143,12 +143,27 @@ function createList(items) {
   return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
 }
 
+
+function setActiveButton(clickedButton) {
+  document
+    .querySelectorAll(".spectrum button, .button-grid button")
+    .forEach(button => {
+      button.classList.remove("active");
+    });
+
+  clickedButton.classList.add("active");
+}
+
+
 function updateInfoBox(html) {
   document.getElementById("infoBox").innerHTML = html;
 }
 
 document.querySelectorAll("[data-range]").forEach(button => {
   button.addEventListener("click", () => {
+
+    setActiveButton(button);
+    
     const data = rangeData[button.dataset.range];
 
     highlightProblem(button.dataset.problem);
@@ -163,6 +178,9 @@ document.querySelectorAll("[data-range]").forEach(button => {
 
 document.querySelectorAll("[data-instrument]").forEach(button => {
   button.addEventListener("click", () => {
+
+    setActiveButton(button);
+    
     const data = instrumentData[button.dataset.instrument];
 
     highlightInstrument(button.dataset.instrument);
@@ -176,6 +194,9 @@ document.querySelectorAll("[data-instrument]").forEach(button => {
 
 document.querySelectorAll("[data-problem]").forEach(button => {
   button.addEventListener("click", () => {
+
+    setActiveButton(button);
+    
     const data = problemData[button.dataset.problem];
 
     highlightProblem(button.dataset.problem);
