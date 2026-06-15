@@ -367,3 +367,52 @@ document.querySelectorAll(".tab-btn").forEach(button => {
     document.getElementById(selectedTab).classList.add("active");
   });
 });
+
+const searchMap = {
+  vocals: '[data-instrument="vocals"]',
+  "rap vocals": '[data-instrument="rapVocals"]',
+  rap: '[data-instrument="rapVocals"]',
+
+  kick: '[data-instrument="kick"]',
+  snare: '[data-instrument="snare"]',
+  hihat: '[data-instrument="hihats"]',
+  hihats: '[data-instrument="hihats"]',
+
+  "808": '[data-instrument="bass808"]',
+  bass: '[data-instrument="bass808"]',
+
+  keys: '[data-instrument="keys"]',
+  piano: '[data-instrument="keys"]',
+
+  guitar: '[data-instrument="guitar"]',
+
+  muddy: '[data-problem="muddy"]',
+  boxy: '[data-problem="boxy"]',
+  harsh: '[data-problem="harsh"]',
+  boomy: '[data-problem="boomy"]',
+  thin: '[data-problem="thin"]',
+  dull: '[data-problem="dull"]'
+};
+
+document.getElementById("quickSearch").addEventListener("keydown", e => {
+  if (e.key !== "Enter") return;
+
+  const search = e.target.value.trim().toLowerCase();
+  const target = searchMap[search];
+
+  if (!target) return;
+
+  const button = document.querySelector(target);
+
+  if (!button) return;
+
+  if (target.includes("data-problem")) {
+    document.querySelector('[data-tab="problemTab"]').click();
+  }
+
+  if (target.includes("data-instrument")) {
+    document.querySelector('[data-tab="instrumentTab"]').click();
+  }
+
+  button.click();
+});
