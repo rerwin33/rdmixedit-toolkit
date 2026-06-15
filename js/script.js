@@ -370,6 +370,8 @@ document.querySelectorAll(".tab-btn").forEach(button => {
 
 const searchMap = {
   vocals: '[data-instrument="vocals"]',
+  vocal: '[data-instrument="vocals"]',
+
   "rap vocals": '[data-instrument="rapVocals"]',
   rap: '[data-instrument="rapVocals"]',
 
@@ -377,6 +379,7 @@ const searchMap = {
   snare: '[data-instrument="snare"]',
   hihat: '[data-instrument="hihats"]',
   hihats: '[data-instrument="hihats"]',
+  hats: '[data-instrument="hihats"]',
 
   "808": '[data-instrument="bass808"]',
   bass: '[data-instrument="bass808"]',
@@ -387,13 +390,52 @@ const searchMap = {
   guitar: '[data-instrument="guitar"]',
 
   muddy: '[data-problem="muddy"]',
-  box: '[data-problem="boxy"]',
+  mud: '[data-problem="muddy"]',
+
   boxy: '[data-problem="boxy"]',
+  box: '[data-problem="boxy"]',
+
   harsh: '[data-problem="harsh"]',
   boomy: '[data-problem="boomy"]',
+  boom: '[data-problem="boomy"]',
+
   thin: '[data-problem="thin"]',
   dull: '[data-problem="dull"]'
 };
+
+const quickSearchInput = document.getElementById("quickSearch");
+
+if (quickSearchInput) {
+  quickSearchInput.addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+
+    const search = e.target.value.trim().toLowerCase();
+    const target = searchMap[search];
+
+    if (!target) {
+      updateInfoBox(`
+        <h3>No Match Found</h3>
+        <p>Try searching for vocals, 808, muddy, harsh, snare, kick, piano, or guitar.</p>
+      `);
+      return;
+    }
+
+    const button = document.querySelector(target);
+
+    if (!button) return;
+
+    if (target.includes("data-problem")) {
+      document.querySelector('[data-tab="problemTab"]').click();
+    }
+
+    if (target.includes("data-instrument")) {
+      document.querySelector('[data-tab="instrumentTab"]').click();
+    }
+
+    button.click();
+    e.target.value = "";
+  });
+}
 
 document.getElementById("quickSearch").addEventListener("keydown", e => {
   if (e.key !== "Enter") return;
