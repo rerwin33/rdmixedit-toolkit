@@ -115,27 +115,102 @@ const instrumentData = {
 const problemData = {
   muddy: {
     title: "Muddy Mix",
-    text: "Check 150-350Hz first. Try a small cut on vocals, instruments, or mix bus."
+    range: "150Hz - 350Hz",
+    causes: [
+      "Vocals",
+      "Piano / Keys",
+      "Guitars",
+      "Pads"
+    ],
+    fixes: [
+      "Cut 2-4dB",
+      "Use a medium Q",
+      "Sweep to find the worst area",
+      "Check overlapping instruments"
+    ]
   },
+
   boxy: {
     title: "Boxy Mix",
-    text: "Check 300-700Hz. This area can make vocals and instruments sound trapped or hollow."
+    range: "300Hz - 700Hz",
+    causes: [
+      "Vocals",
+      "Snare",
+      "Room Mics",
+      "Acoustic Instruments"
+    ],
+    fixes: [
+      "Cut 2-3dB",
+      "Check room reflections",
+      "Use narrow cuts when needed",
+      "Avoid over-EQing"
+    ]
   },
+
   harsh: {
     title: "Harsh Mix",
-    text: "Check 2.5-5kHz. Reduce carefully because this area also controls presence."
+    range: "2.5kHz - 5kHz",
+    causes: [
+      "Vocals",
+      "Hi-Hats",
+      "Guitars",
+      "Synth Leads"
+    ],
+    fixes: [
+      "Reduce 2-5kHz carefully",
+      "Use dynamic EQ",
+      "Check monitoring volume",
+      "Compare against references"
+    ]
   },
+
   boomy: {
     title: "Boomy Mix",
-    text: "Check 80-150Hz. Too much here can make the low end feel loose."
+    range: "80Hz - 150Hz",
+    causes: [
+      "Kick",
+      "808",
+      "Bass Guitar",
+      "Room Resonance"
+    ],
+    fixes: [
+      "Cut 2-4dB",
+      "Check kick/808 balance",
+      "Use high-pass filters",
+      "Check room acoustics"
+    ]
   },
+
   thin: {
     title: "Thin Mix",
-    text: "Check 100-250Hz. A small boost can add warmth and body."
+    range: "100Hz - 250Hz",
+    causes: [
+      "Over-EQing",
+      "Weak Low Mids",
+      "Poor Arrangement"
+    ],
+    fixes: [
+      "Add warmth carefully",
+      "Boost 100-250Hz slightly",
+      "Layer supporting instruments",
+      "Check phase issues"
+    ]
   },
+
   dull: {
     title: "Dull Mix",
-    text: "Check 8-16kHz. A gentle shelf can add brightness and air."
+    range: "8kHz - 16kHz",
+    causes: [
+      "Lack of Air",
+      "Dark Sources",
+      "Over-De-Essing"
+    ],
+    fixes: [
+      "Add a high shelf",
+      "Boost air frequencies",
+      "Review de-esser settings",
+      "Compare to references"
+    ]
   }
 };
 
@@ -192,6 +267,7 @@ document.querySelectorAll("[data-instrument]").forEach(button => {
 
 document.querySelectorAll("[data-problem]").forEach(button => {
   button.addEventListener("click", () => {
+
     setActiveButton(button);
 
     const selectedProblem = button.dataset.problem;
@@ -201,9 +277,18 @@ document.querySelectorAll("[data-problem]").forEach(button => {
 
     updateInfoBox(`
       <h3>${data.title}</h3>
-      <p>${data.text}</p>
-      <p><strong>RD Tip:</strong> Cut first. Boost second. Always A/B your moves.</p>
+
+      <p><strong>Likely Frequency Area:</strong><br>${data.range}</p>
+
+      <p><strong>Common Causes:</strong></p>
+      ${createList(data.causes)}
+
+      <p><strong>Try This:</strong></p>
+      ${createList(data.fixes)}
+
+      <p><strong>RD Tip:</strong> Cut before boosting. Always compare before and after.</p>
     `);
+
   });
 });
 
