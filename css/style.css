@@ -276,6 +276,26 @@ footer {
   display: block;
 }
 
+.search-container {
+  margin-bottom: 20px;
+}
+
+#quickSearch {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #080808;
+  color: white;
+  font-size: 1rem;
+}
+
+#quickSearch:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255,215,0,.25);
+}
+
 @media (max-width: 768px) {
   .problem-grid {
     grid-template-columns: repeat(2, 1fr);
