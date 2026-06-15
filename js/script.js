@@ -143,7 +143,6 @@ function createList(items) {
   return `<ul>${items.map(item => `<li>${item}</li>`).join("")}</ul>`;
 }
 
-
 function setActiveButton(clickedButton) {
   document
     .querySelectorAll(".spectrum button, .button-grid button")
@@ -154,19 +153,18 @@ function setActiveButton(clickedButton) {
   clickedButton.classList.add("active");
 }
 
-
 function updateInfoBox(html) {
   document.getElementById("infoBox").innerHTML = html;
 }
 
 document.querySelectorAll("[data-range]").forEach(button => {
   button.addEventListener("click", () => {
-
     setActiveButton(button);
-    
-    const data = rangeData[button.dataset.range];
 
-    highlightProblem(button.dataset.problem);
+    const selectedRange = button.dataset.range;
+    const data = rangeData[selectedRange];
+
+    highlightSpectrum(selectedRange);
 
     updateInfoBox(`
       <h3>${data.title}</h3>
@@ -178,12 +176,12 @@ document.querySelectorAll("[data-range]").forEach(button => {
 
 document.querySelectorAll("[data-instrument]").forEach(button => {
   button.addEventListener("click", () => {
-
     setActiveButton(button);
-    
-    const data = instrumentData[button.dataset.instrument];
 
-    highlightInstrument(button.dataset.instrument);
+    const selectedInstrument = button.dataset.instrument;
+    const data = instrumentData[selectedInstrument];
+
+    highlightInstrument(selectedInstrument);
 
     updateInfoBox(`
       <h3>${data.title}</h3>
@@ -194,12 +192,12 @@ document.querySelectorAll("[data-instrument]").forEach(button => {
 
 document.querySelectorAll("[data-problem]").forEach(button => {
   button.addEventListener("click", () => {
-
     setActiveButton(button);
-    
-    const data = problemData[button.dataset.problem];
 
-    highlightProblem(button.dataset.problem);
+    const selectedProblem = button.dataset.problem;
+    const data = problemData[selectedProblem];
+
+    highlightProblem(selectedProblem);
 
     updateInfoBox(`
       <h3>${data.title}</h3>
