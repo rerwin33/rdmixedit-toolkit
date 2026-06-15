@@ -436,26 +436,3 @@ if (quickSearchInput) {
     e.target.value = "";
   });
 }
-
-document.getElementById("quickSearch").addEventListener("keydown", e => {
-  if (e.key !== "Enter") return;
-
-  const search = e.target.value.trim().toLowerCase();
-  const target = searchMap[search];
-
-  if (!target) return;
-
-  const button = document.querySelector(target);
-
-  if (!button) return;
-
-  if (target.includes("data-problem")) {
-    document.querySelector('[data-tab="problemTab"]').click();
-  }
-
-  if (target.includes("data-instrument")) {
-    document.querySelector('[data-tab="instrumentTab"]').click();
-  }
-
-  button.click();
-});
