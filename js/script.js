@@ -225,24 +225,25 @@ function highlightSpectrum(range) {
   highlight.style.width = positions[range].width;
 }
 
-function highlightInstrument(instrument) {
+function highlightSpectrum(range) {
   const highlight = document.getElementById("spectrumHighlight");
 
   const positions = {
-    vocals: { left: "20%", width: "45%" },
-    rapVocals: { left: "18%", width: "50%" },
-    kick: { left: "5%", width: "20%" },
-    snare: { left: "15%", width: "25%" },
-    hihats: { left: "75%", width: "20%" },
-    bass808: { left: "0%", width: "25%" },
-    keys: { left: "15%", width: "45%" },
-    guitar: { left: "20%", width: "40%" }
+    sub: { left: "0%", width: "12%" },
+    bass: { left: "12%", width: "20%" },
+    lowmids: { left: "32%", width: "18%" },
+    mids: { left: "50%", width: "20%" },
+    uppermids: { left: "70%", width: "15%" },
+    highs: { left: "85%", width: "15%" }
   };
 
-  if (!positions[instrument]) return;
+  const selectedPosition = positions[range];
 
-  highlight.style.left = positions[instrument].left;
-  highlight.style.width = positions[instrument].width;
+  if (!highlight || !selectedPosition) return;
+
+  highlight.style.left = selectedPosition.left;
+  highlight.style.width = selectedPosition.width;
+  highlight.style.opacity = "1";
 }
 
 function highlightProblem(problem) {
