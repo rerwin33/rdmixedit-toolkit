@@ -387,6 +387,7 @@ const searchMap = {
   guitar: '[data-instrument="guitar"]',
 
   muddy: '[data-problem="muddy"]',
+  box: '[data-problem="boxy"]',
   boxy: '[data-problem="boxy"]',
   harsh: '[data-problem="harsh"]',
   boomy: '[data-problem="boomy"]',
