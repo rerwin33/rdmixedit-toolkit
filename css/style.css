@@ -296,6 +296,17 @@ footer {
   box-shadow: 0 0 10px rgba(255,215,0,.25);
 }
 
+/* WHAT THIS MEANS */
+
+.terms-grid {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+}
+
+.terms-grid button {
+  padding: 12px 10px;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
   .problem-grid {
     grid-template-columns: repeat(2, 1fr);
